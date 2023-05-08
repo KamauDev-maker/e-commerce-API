@@ -1,0 +1,12 @@
+{
+  "name": "e-commerce-api",
+  "version": "1.0.0",
+  "description": "This is a Simple rest API for managing a small E-commerce store. With this API, you can access various features of the store such as Products, filter products by category, shopping cart and payment Gateway.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
