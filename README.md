@@ -1,6 +1,10 @@
 ## Small Store E-Commerce API
 This is a Simple rest API for managing a small E-commerce store. With this API, you can access various features of the store such as Products, filter products by category, shopping cart and payment Gateway.
-![Screenshot](welcomePage.png)
+
+<p align="center">
+  <img src="./images/welcomePage.png" width="350" title="hover text">
+</p>
+
 ### Available Endpoints
 1. A list of categories of items i.e Women, Men and Kids:
 	-  URL: /api/categories
