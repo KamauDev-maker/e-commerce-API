@@ -45,7 +45,7 @@ This is a Simple rest API for managing a small E-commerce store. With this API, 
 **Updates**
 
 <p align="center">
-  <img src="./images/updatedCart.png" width="350" title="hover text">
+  <img src="./images/updateCart.png" width="350" title="hover text">
 </p>
 
 	- URL:/api/cart-update
