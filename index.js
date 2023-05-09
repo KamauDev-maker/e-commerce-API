@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 
 app.use('/api', apiRoutes);
 
-app.get('/', (req, res) => {
+app.get('/api', (req, res) => {
     res.send('Welcome To E-commerce API Store!');
 });
 

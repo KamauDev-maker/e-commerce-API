@@ -62,4 +62,3 @@ export const updateCart = (req, res) => {
   
     res.json(cart);
 }
-  
