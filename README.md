@@ -39,3 +39,8 @@ This is a Simple rest API for managing a small E-commerce store. With this API, 
 	- Response: updates the cart 
 1. An endpoint that connects to a gateway and creates a payment session for the current cart
 	- URL: /api/purchase
+## Installation
+	Clone the repo
+	Install the dependencies *npm install*
+	*npm start*
+	Usage - Postman
