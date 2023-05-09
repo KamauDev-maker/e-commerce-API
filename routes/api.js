@@ -4,9 +4,9 @@ import { v4 as uuidv4 } from "uuid";
 const router = express.Router();
 const categories = ["women", " men", " kids"];
 const items = [
-  { id: uuidv4(), name: "Item 1", category: "women", price: 50 },
-  { id: uuidv4(), name: "Item 2", category: "men", price: 50 },
-  { id: uuidv4(), name: "Item 3", category: "kids", price: 50 },
+  {  name: "Item 1", category: "women", price: 50 , id: uuidv4()},
+  {  name: "Item 2", category: "men", price: 50, id: uuidv4() },
+  {  name: "Item 3", category: "kids", price: 50, id: uuidv4() },
 ];
 
 let cart = {
@@ -41,28 +41,29 @@ router.get("/cart", (req, res) => {
 });
 
 // Update cart
-router.put("/cart", (req, res) => {
-    const { id, quantity } = req.body;
-    const item = items.find((item) => item.id === id);
+router.post('/cart', (req, res) => {
+  const { itemId, quantity } = req.body;
 
-    if (!item) {
-        return res.status(404).send({error: 'Not Found'});
-    }
+  const item = items.find((item) => item.id === itemId);
 
-    const cartItem = cart.items.find((item) => item.id === id);
+  if (!item) {
+    return res.status(404).json({ error: 'Item not found' });
+  }
 
-    if (cartItem) {
-        cartItem.quantity = quantity;
-    } else {
-        cartItem.items.push({ id, quantity });
-    }
+  const cartItem = cart.items.find((item) => item.itemId === itemId);
 
-    cart.total = cart.items.reduce((total, item) => {
-        constitemPrice = items.find((i) => i.id === item.id).price;
-        return total + itemPrice * item.quantity;
-    }, 0);
+  if (cartItem) {
+    cartItem.quantity = quantity;
+  } else {
+    cart.items.push({ itemId, quantity });
+  }
 
-    res.send(cart);
+  cart.total = cart.items.reduce((total, item) => {
+    const itemPrice = items.find((i) => i.id === item.itemId).price;
+    return total + itemPrice * item.quantity;
+  }, 0);
+
+  res.json(cart);
 });
-  
+
 export default router;
